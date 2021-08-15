@@ -1,7 +1,6 @@
 # Demo Kubernetes Beyond The Basic Sesion 1
 
 ### Si quieres correr tu cluster de pruebas en el local solo necesitas:
-* Vagrant
 * Virtualbox
 
 ### Para las pruebas de compilicacion:
@@ -15,19 +14,11 @@ Nota: De preferencia usar un ambiente linux o mac. Adicionalmente tener docker i
 brew install kind
 ```
 
-## Para Linux
-```
-git clone https://github.com/is-daimonos/kubernetes-beyond-the-basic
-cd kubernetes-beyond-the-basic
-vagrant up
-```
-
-
-### Crea tu cluster
+### Creamos el cluster
 
 ### kind configuration
 ```yaml
-cat <<EOF >> kind-configuration.yaml
+vim kind-configuration.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -45,13 +36,12 @@ nodes:
   - containerPort: 443
     hostPort: 443
     protocol: TCP
-EOF
 ```
 ### Ejecuta la creación
 ```bash
 kind create cluster \
 --name gc-hcmc-kubernetes-demo \
---image kindest/node:v1.16.9 \
+--image kindest/node:v1.21.0 \
 --config=kind-configuration.yaml
 ```
 
@@ -103,7 +93,6 @@ Borrar la configuracion del cluster anterior
 rm -rf kind-configuration.yaml
 ```
 ```yaml
-cat <<EOF >> kind-configuration.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 containerdConfigPatches:
@@ -125,7 +114,6 @@ nodes:
   - containerPort: 443
     hostPort: 443
     protocol: TCP
-EOF
 ```
 ### Ejecuta la creación
 ```bash

@@ -120,7 +120,7 @@ nodes:
 kind create cluster \
 --name gc-hcmc-kubernetes-demo \
 --image kindest/node:v1.16.9 \
---config=kind-configuration.yaml
+--config=sample-01/kind-configuration.yaml
 ```
 Conecta el registry a la red de docker
 ```

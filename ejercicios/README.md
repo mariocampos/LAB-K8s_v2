@@ -119,7 +119,7 @@ nodes:
 ```bash
 kind create cluster \
 --name gc-hcmc-kubernetes-demo \
---image kindest/node:v1.16.9 \
+--image kindest/node:v1.21.1 \
 --config=sample-01/kind-configuration.yaml
 ```
 Conecta el registry a la red de docker

@@ -41,7 +41,7 @@ nodes:
 ```bash
 kind create cluster \
 --name gc-hcmc-kubernetes-demo \
---image kindest/node:v1.21.0 \
+--image kindest/node:v1.21.1 \
 --config=kind-configuration.yaml
 ```
 
